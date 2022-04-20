@@ -8,8 +8,13 @@ import { storage, Context } from "near-sdk-as"
   return 'hello Mehmet '
 } */
 
-export function helloWorld(names: Array<string>): string {
+/* export function helloWorld(names: Array<string>): string {
   return names.map<string>(name => 'hello ' + name).join(` `)
+} */
+
+export function helloWorld(): string {
+  const predecessor = Context.predecessor
+  return 'hello ' + predecessor
 }
 
 
